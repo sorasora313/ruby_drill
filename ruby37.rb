@@ -1,4 +1,5 @@
 def lone_sum(ary)
+  # 配列から、重複しない要素のみ取り出す
   uniq_nums = []
   ary.each do |num|
     count = 0
@@ -7,16 +8,18 @@ def lone_sum(ary)
         count += 1
       end
     end
-   if count < 2
+    if count < 2
       uniq_nums << num
+    end
   end
-end
-sum = 0
-uniq_nums.each do |uniq_nums|
-  sum += uniq_nums
-end
-puts sum
+
+  # uniq_nums配列内の合計
+  sum = 0
+  uniq_nums.each do |unique_num|
+    sum += unique_num
+  end
+  puts sum
 end
 
 # 呼び出し例
-lone_sum([1, 2, 3])
+lone_sum([3, 2, 3])
